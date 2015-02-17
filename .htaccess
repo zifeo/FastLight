@@ -1,0 +1,10 @@
+Options -MultiViews
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|scripts\.php|styles\.php|contents|robots\.txt)
+RewriteRule ^(.+)$ /index.php?route=$1 [L]
+
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE php css js xml svg eot woff oft
+
+#ErrorDocument 403 /index.php?route=controller/403
